@@ -227,3 +227,44 @@
     transform: rotate(0deg);
   }
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('/images/bg-image.jpg'); 
+  background-size: cover;
+  background-position: center;
+}
+
+.title {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 4em;
+  text-align: center;
+  margin: 0;
+  animation: bounce 1s normal;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.MuiButton-root {
+  margin-top: 20px;
+}
