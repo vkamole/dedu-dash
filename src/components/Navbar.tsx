@@ -79,17 +79,17 @@ const Navbar = () => {
         }}
       >
         <List sx={{ color: "#ffffff" }}>
-          <ListItem button key="Home">
+          <ListItem key="Home">
             <Link href="/">
               <ListItemText primary="Home" />
             </Link>
           </ListItem>
-          <ListItem button key="Services">
+          <ListItem key="Services">
             <Link href="/services">
               <ListItemText primary="Services" />
             </Link>
           </ListItem>
-          <ListItem button key="About">
+          <ListItem key="About">
             <Link href="/about">
               <ListItemText primary="About" />
             </Link>
