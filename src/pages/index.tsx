@@ -21,7 +21,9 @@ export default function Home() {
     <>
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" />
       <div className={styles.container} style={{ flexDirection: "column" }}>
-        <h1 className={styles.title}>Welcome to DeduDash!</h1>
+        <h1 className={styles.title} style={{ color: "#FFFFFF" }}>
+          Welcome to DeduDash!
+        </h1>
         <div style={{ marginTop: 20 }}>
           <Button
             variant="contained"

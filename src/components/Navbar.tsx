@@ -51,7 +51,7 @@ const Navbar = () => {
               marginRight: 3,
             }}
           >
-            <Link href="/">Home</Link>
+            <Link href="/home">Home</Link>
             <span style={{ margin: "0 20px" }}></span>
             <Link href="/services">Services</Link>
             <span style={{ margin: "0 20px" }}></span>
