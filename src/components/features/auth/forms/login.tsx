@@ -7,6 +7,7 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import { Avatar, Box, Typography } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import SignupDialog from "./signup";
 
 interface LoginDialogProps {
   open: boolean;
@@ -35,6 +36,16 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
     );
     // Close the dialog after login attempt
     onClose();
+  };
+
+  const [openSignup, setOpenSignUp] = useState(false);
+
+  const handleOpenSignup = () => {
+    setOpenSignUp(true);
+  };
+
+  const handleCloseSignUp = () => {
+    setOpenSignUp(false);
   };
 
   return (
@@ -91,7 +102,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
           </Box>
           <Box>
             <Button
-              onClick={handleLogin}
+              onClick={handleOpenSignup}
               variant="text"
               color="primary"
               sx={{
@@ -109,6 +120,7 @@ const LoginDialog: React.FC<LoginDialogProps> = ({ open, onClose }) => {
           Login
         </Button>
       </DialogActions>
+      <SignupDialog open={openSignup} onClose={handleCloseSignUp} />
     </Dialog>
   );
 };
