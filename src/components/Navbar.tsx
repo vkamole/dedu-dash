@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="fixed" sx={{ height: "12%" }} variant="outlined">
+      <AppBar position="fixed" sx={{ height: "9%" }} variant="outlined">
         <Toolbar>
           <IconButton
             size="large"
