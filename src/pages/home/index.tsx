@@ -8,7 +8,7 @@ import Notifications from "@/components/Notifications";
 import RecentTransactions from "@/components/RecentTransactions";
 import GraphsAndCharts from "@/components/GraphsAndCharts";
 
-const Home: React.FC = () => {
+const Home = () => {
   return (
     <>
       <Head>
