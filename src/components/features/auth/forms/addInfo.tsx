@@ -1,12 +1,19 @@
-// components/AddInfoForm.tsx
-
 import { useState } from "react";
+import {
+  Button,
+  TextField,
+  Box,
+  Typography,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+} from "@mui/material";
 
 interface AddInfoFormProps {
   onClose: () => void;
 }
 
-const AddInfoForm: React.FC<AddInfoFormProps> = ({ onClose }) => {
+const AddInfoForm = ({ onClose }: AddInfoFormProps) => {
   const [formData, setFormData] = useState({
     salary: "",
     deductions: "",
@@ -30,44 +37,58 @@ const AddInfoForm: React.FC<AddInfoFormProps> = ({ onClose }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Add Financial Information</h2>
-      <div className="form-group">
-        <label htmlFor="salary">Salary</label>
-        <input
-          type="number"
-          id="salary"
-          name="salary"
-          value={formData.salary}
-          onChange={handleChange}
-          placeholder="Enter your salary"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="deductions">Deductions</label>
-        <input
-          type="number"
-          id="deductions"
-          name="deductions"
-          value={formData.deductions}
-          onChange={handleChange}
-          placeholder="Enter your deductions"
-          required
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="expenses">Total Expenses</label>
-        <input
-          type="number"
-          id="expenses"
-          name="expenses"
-          value={formData.expenses}
-          onChange={handleChange}
-          placeholder="Enter your total expenses"
-          required
-        />
-      </div>
-      <button type="submit">Submit</button>
+      <DialogTitle>
+        <Typography variant="h6" component="div">
+          Add Financial Information
+        </Typography>
+      </DialogTitle>
+
+      <DialogContent>
+        <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
+          <TextField
+            label="Salary"
+            variant="outlined"
+            name="salary"
+            value={formData.salary}
+            onChange={handleChange}
+            placeholder="Enter your salary"
+            type="number"
+            fullWidth
+            required
+          />
+          <TextField
+            label="Deductions"
+            variant="outlined"
+            name="deductions"
+            value={formData.deductions}
+            onChange={handleChange}
+            placeholder="Enter your deductions"
+            type="number"
+            fullWidth
+            required
+          />
+          <TextField
+            label="Total Expenses"
+            variant="outlined"
+            name="expenses"
+            value={formData.expenses}
+            onChange={handleChange}
+            placeholder="Enter your total expenses"
+            type="number"
+            fullWidth
+            required
+          />
+        </Box>
+      </DialogContent>
+
+      <DialogActions>
+        <Button onClick={onClose} color="secondary">
+          Cancel
+        </Button>
+        <Button type="submit" variant="contained" color="primary">
+          Submit
+        </Button>
+      </DialogActions>
     </form>
   );
 };

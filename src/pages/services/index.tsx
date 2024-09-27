@@ -1,21 +1,27 @@
 import Head from "next/head";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import Modal from "@/components/Modal";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 import AddInfoForm from "@/components/features/auth/forms/addInfo";
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
+  Button,
+} from "@mui/material";
 
 const Services = () => {
-  // State to control the modal visibility
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // State to control the Dialog visibility
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
 
-  const openModal = () => {
-    setIsModalOpen(true);
+  const openDialog = () => {
+    setIsDialogOpen(true);
   };
 
-  const closeModal = () => {
-    setIsModalOpen(false);
+  const closeDialog = () => {
+    setIsDialogOpen(false);
   };
 
   return (
@@ -46,7 +52,7 @@ const Services = () => {
                 Submit your financial details, including salary, deductions, and
                 expenses, to get a personalized overview of your finances.
               </p>
-              <button className={styles.button} onClick={openModal}>
+              <button className={styles.button} onClick={openDialog}>
                 Add Financial Info
               </button>
             </div>
@@ -78,10 +84,13 @@ const Services = () => {
 
       <Footer />
 
-      {/* Modal for Adding Financial Info */}
-      <Modal isOpen={isModalOpen} onClose={closeModal}>
-        <AddInfoForm onClose={closeModal} />
-      </Modal>
+      {/* Dialog for Adding Financial Info */}
+      <Dialog open={isDialogOpen} onClose={closeDialog} fullWidth maxWidth="sm">
+        <DialogContent>
+          <AddInfoForm onClose={closeDialog} />
+        </DialogContent>
+        <DialogActions></DialogActions>
+      </Dialog>
     </>
   );
 };
